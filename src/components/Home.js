@@ -1,13 +1,36 @@
 import React from "react";
 import { childIds } from "../reducers/reducer";
-import { addChild, removeNode, increment } from "../Action";
+import * as actions  from "../Action";
 
-export default function Home(props) {
+handleChildClick(){
+  e.preventDefault();
+ 
+}
+handleDeleteClick(){
+
+}
+handleIncrementClick(){
+
+}
+renderChild(){
+
+}
+
+
+const Home=(props) =>{
   console.log(props);
-  //{counter,nodeId,childIds}=props
+  const {counter,nodeId,childIds,parentId}=props
   return (
     <>
-      <div>Counter:{}</div>
+      <div>Counter:{counter}</div>
+      <button onClick={props.incrementHandler({})}>+</button>
+      <a onClick={handleDeleteClick}>x</a>
+      <ul>
+        {childIds.map(renderChild)}
+        <li>
+          <a onClick={handleChildClick}>Add child</a>
+        </li>
+      </ul>
     </>
   );
 }
