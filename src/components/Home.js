@@ -1,6 +1,7 @@
 import React from "react";
 import { childIds } from "../reducers/reducer";
 import * as actions from "../Action";
+import HomeContainer from "../container/HomeContainer";
 
 function addChildHandler() {
   // e.preventDefault();
@@ -19,7 +20,11 @@ function incrementHandler() {
 }
 function renderChild() {
   const { childId, id } = this.props;
-  return <li key={childId}></li>;
+  return (
+    <li key={childId}>
+      <HomeContainer id={childId} parentId={id} />
+    </li>
+  );
 }
 
 export default Home = (props) => {
@@ -33,7 +38,9 @@ export default Home = (props) => {
       <ul>
         {childIds.map(renderChild)}
         <li>
-          <a onClick={addChildHandler}>Add child</a>
+          <a href="#" onClick={addChildHandler}>
+            Add child
+          </a>
         </li>
       </ul>
     </>
