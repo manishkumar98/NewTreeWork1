@@ -3,8 +3,10 @@ export default function Tree() {
     0: {
       counter: 0,
       nodeId: 0,
-      childIds: []
+      childIds: [],
+      parentId: Math.floor(Math.random() * 10000)
     }
   };
+
   return tree;
 }

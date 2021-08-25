@@ -1,10 +1,9 @@
-import {
-  ADD_CHILD,
-  REMOVE_NODE,
-  INCREMENT,
-  CREATE_NODE,
-  DELETE_NODE
-} from "./constants";
+export const ADD_CHILD = "ADD_CHILD";
+export const REMOVE_CHILD = "REMOVE_CHILD";
+export const INCREMENT = "INCREMENT";
+export const CREATE_NODE = "CREATE_NODE";
+export const DELETE_NODE = "DELETE_NODE";
+
 export const increment = (nodeId) => ({
   type: INCREMENT,
   nodeId
@@ -16,7 +15,7 @@ export const addChild = (nodeId, childId) => ({
 });
 
 export const removeChild = (nodeId) => ({
-  type: REMOVE_NODE,
+  type: REMOVE_CHILD,
   nodeId
 });
 let nextId = 0;
