@@ -1,36 +1,41 @@
 import React from "react";
 import { childIds } from "../reducers/reducer";
-import * as actions  from "../Action";
+import * as actions from "../Action";
 
-handleChildClick(){
-  e.preventDefault();
- 
+function addChildHandler() {
+  // e.preventDefault();
+  const { addChild, createNode, id } = this.props;
+  const childId = createNode().nodeId;
+  addChild(id, childId);
 }
-handleDeleteClick(){
-
+function removeNodeHandler() {
+  const { removeChild, deleteNode, parentId, id } = this.props;
+  removeChild(parentId, id);
+  deleteNode(id);
 }
-handleIncrementClick(){
-
+function incrementHandler() {
+  const { increment, id } = this.props;
+  increment(id);
 }
-renderChild(){
-
+function renderChild() {
+  const { childId, id } = this.props;
+  return <li key={childId}></li>;
 }
 
-
-const Home=(props) =>{
+export default Home = (props) => {
   console.log(props);
-  const {counter,nodeId,childIds,parentId}=props
+  const { counter, nodeId, childIds, parentId } = props;
   return (
     <>
       <div>Counter:{counter}</div>
-      <button onClick={props.incrementHandler({})}>+</button>
-      <a onClick={handleDeleteClick}>x</a>
+      <button onClick={incrementHandler}>+</button>
+      <a onClick={removeNodeHandler}>x</a>
       <ul>
         {childIds.map(renderChild)}
         <li>
-          <a onClick={handleChildClick}>Add child</a>
+          <a onClick={addChildHandler}>Add child</a>
         </li>
       </ul>
     </>
   );
-}
+};
