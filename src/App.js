@@ -5,7 +5,7 @@ import "./styles.css";
 //import { combineReducer } from "redux";
 
 //import Tree from "./Tree";
-
+import Node from "./Node";
 export default function App() {
   //const tree = Tree();
 
@@ -15,6 +15,7 @@ export default function App() {
       <div className="App">
         <h1>Hello CodeSandbox</h1>
         <h2>Start editing to see some magic happen!</h2>
+        <Node />
       </div>
     </>
   );
