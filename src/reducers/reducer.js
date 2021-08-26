@@ -8,7 +8,7 @@ import {
 //import { ADD_CHILD, REMOVE_NODE, INCREMENT } from "../Action";
 //import { increment, addChild, removeNode } from "../Action";
 
-const childIds = (state = childIds, action) => {
+export const childIds = (state = childIds, action) => {
   console.log(action);
   switch (action.type) {
     case ADD_CHILD:
@@ -20,7 +20,7 @@ const childIds = (state = childIds, action) => {
       return state;
   }
 };
-const node = (state = node, action) => {
+export const node = (state = node, action) => {
   switch (action.type) {
     case CREATE_NODE:
       return {
@@ -46,7 +46,7 @@ const node = (state = node, action) => {
   }
 };
 
-const getChildrenIds = (state, nodeId) => {
+export const getChildrenIds = (state, nodeId) => {
   state[nodeId].childIds.reduce(
     (accumulator, childId) => [
       ...accumulator,
@@ -56,7 +56,7 @@ const getChildrenIds = (state, nodeId) => {
     []
   );
 };
-const deleteAll = (state, ids) => {
+export const deleteAll = (state, ids) => {
   state = { ...state };
   ids.forEach((id) => delete state[id]);
   return state;

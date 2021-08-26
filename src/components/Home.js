@@ -67,8 +67,9 @@ function Home(props) {
   );
 }
 //   {childIds.map(renderChild)}
-function mapStateToProps(state) {
+export default Home;
+/*function mapStateToProps(state) {
   return state;
 }
 const ConnectedHome = connect(mapStateToProps, actions)(Home);
-export default ConnectedHome;
+export default ConnectedHome;*/
