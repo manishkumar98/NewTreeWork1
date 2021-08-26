@@ -10,10 +10,11 @@ import { createStore } from "redux";
 import { Provider } from "react-redux";
 import HomeContainer from "./container/HomeContainer";
 import Tree from "./Tree";
-import reducer from "./reducers/index";
+import reducer from "./reducers/reducer";
 export default function App() {
-  //const tree = Tree();
-  const store = createStore(Tree, reducer);
+  const tree = Tree();
+  const store = createStore(reducer, tree);
+  //console.log(store);
   //const store = createStore(reducer, tree);
   return (
     <>
