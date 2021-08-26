@@ -8,9 +8,4 @@ const rootElement = document.getElementById("root");
 
 const store = createStore(Tree, reducer);
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  rootElement
-);
+ReactDOM.render(<App />, rootElement);

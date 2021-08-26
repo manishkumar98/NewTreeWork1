@@ -9,9 +9,15 @@ const mapDispatchToProps = (dispatch) => ({
   addChildHandler: (nodeId, childId) => dispatch(addChild(nodeId, childId)),
   removeNodeHandler: (nodeId) => dispatch(removeNode(nodeId))
 });
-function mapStateToProps(state) {
+function mapStateToProps(state, ownProps) {
   return state;
 }
 //Jo bhi data lena hai
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);
+/*function mapStateToProps(state, ownProps) {
+  return state[ownProps.id];
+}
+
+const HomeContainer = connect(mapStateToProps)(Home);
+export default HomeContainer;*/

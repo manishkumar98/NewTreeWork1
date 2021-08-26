@@ -6,18 +6,20 @@ import "./styles.css";
 //import index from "./reducers/index"
 //import Tree from "./Tree";
 //import Home from "./components/Home";
+import { createStore } from "redux";
+import { Provider } from "react-redux";
 import HomeContainer from "./container/HomeContainer";
+import Tree from "./Tree";
+import reducer from "./reducers/index";
 export default function App() {
   //const tree = Tree();
-
+  const store = createStore(Tree, reducer);
   //const store = createStore(reducer, tree);
   return (
     <>
-      <div className="App">
-        <h1>Hello CodeSandbox</h1>
-        <h2>Start editing to see some magic happen!</h2>
+      <Provider store={store}>
         <HomeContainer />
-      </div>
+      </Provider>
     </>
   );
 }
