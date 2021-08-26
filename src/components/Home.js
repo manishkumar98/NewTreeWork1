@@ -22,14 +22,14 @@ import { ReactReduxContext } from "react-redux";
   const { increment, id } = props;
   increment(id);
 }*/
-function renderChild(props) {
+/*function renderChild(props) {
   const { childId, id } = props;
   return (
     <li key={childId}>
-      <HomeContainer id={childId} parentId={id} />
+      <Home id={childId} parentId={id} />
     </li>
   );
-}
+}*/
 
 function Home(props) {
   console.log(props);
@@ -55,7 +55,7 @@ function Home(props) {
     <>
       <div>Counter:{props.counter}</div>
       <button onClick={props.incrementHandler}>+</button>
-      <a onClick={props.removeNodeHandler}> x</a>
+      <a onClick={props.deleteNodeHandler}> x</a>
       <ul>
         <li>
           <a href="#" onClick={props.addChildHandler}>
@@ -73,3 +73,4 @@ export default Home;
 }
 const ConnectedHome = connect(mapStateToProps, actions)(Home);
 export default ConnectedHome;*/
+/*{childIds.map(renderChild(props))}*/

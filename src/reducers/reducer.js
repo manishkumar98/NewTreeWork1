@@ -12,7 +12,7 @@ export const childIds = (state = childIds, action) => {
   console.log(action);
   switch (action.type) {
     case ADD_CHILD:
-      return [...state, action.childId];
+      return [state, action.childId];
     case REMOVE_CHILD:
       return state.filter((id) => id !== action.childId);
 
