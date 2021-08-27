@@ -5,10 +5,11 @@ import Home from "../components/Home";
 //import { increment } from "../reducer";
 const mapDispatchToProps = (dispatch) => ({
   //Jo bhi data bhejna hai
-  incrementHandler: (nodeId) => dispatch(increment(nodeId)),
-  addChildHandler: (nodeId, childId) => dispatch(addChild(nodeId, childId)),
-  removeChildHandler: (nodeId) => dispatch(removeChild(nodeId)),
-  deleteNodeHandler: (nodeId) => dispatch(deleteNode(nodeId))
+
+  incrementHandler: () => dispatch(increment()),
+  deleteNodeHandler: () => dispatch(deleteNode()),
+  addChildHandler: () => dispatch(addChild())
+  //incrementHandler: () => dispatch(increment())
 });
 function mapStateToProps(state, ownProps) {
   return state;

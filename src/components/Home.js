@@ -1,12 +1,12 @@
 import React from "react";
-import { Component } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import * as actions from "../Action";
-import HomeContainer from "../container/HomeContainer";
-import { connect } from "react-redux";
-import { childIds, increment, node } from "../reducers/index";
+//import { Component } from "react";
 //import { useSelector, useDispatch } from "react-redux";
-import { ReactReduxContext } from "react-redux";
+//import * as actions from "../Action";
+//import HomeContainer from "../container/HomeContainer";
+//import { connect } from "react-redux";
+//import { childIds, increment, node } from "../reducers/index";
+//import { useSelector, useDispatch } from "react-redux";
+//import { ReactReduxContext } from "react-redux";
 /*function addChildHandler(props) {
   // e.preventDefault();
   const { addChild, createNode, id } = props;
@@ -22,14 +22,14 @@ import { ReactReduxContext } from "react-redux";
   const { increment, id } = props;
   increment(id);
 }*/
-/*function renderChild(props) {
-  const { childId, id } = props;
-  return (
+function renderChild(props) {
+  //  const { childIds, nodeId } = props;
+  /* return (
     <li key={childId}>
-      <Home id={childId} parentId={id} />
+      (id={childId},parentId={nodeId})
     </li>
-  );
-}*/
+  );*/
+}
 
 function Home(props) {
   console.log(props);
@@ -51,12 +51,14 @@ function Home(props) {
   } = props;
   console.log(props.parentId);
   //console.log(store);
+  console.log(props.nodeId);
   return (
     <>
       <div>Counter:{props.counter}</div>
       <button onClick={props.incrementHandler}>+</button>
       <a onClick={props.deleteNodeHandler}> x</a>
       <ul>
+        <div>{renderChild()}</div>
         <li>
           <a href="#" onClick={props.addChildHandler}>
             Add child
